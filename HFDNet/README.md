@@ -1,6 +1,6 @@
 
 <p align="center">
-  <h1 align="center">African water body segmentation with cross-layer information separability based feature decoupling transformer</h1>
+  <h1 align="center">HFDNet: High-Frequency Divergence Attention Network for Underwater Segmentation</h1>
   <p align="center">
 
 
