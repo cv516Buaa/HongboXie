@@ -22,7 +22,7 @@
 
 
 ## Introduction
-This repo is the implementation of "African water body segmentation with cross-layer information separability based feature decoupling transformer"
+This repo is the implementation of "HFDNet: High-Frequency Divergence Attention Network for Underwater Segmentation"
 
 <p align="center">
   <img src="images/HFDNet.png" width="720">
