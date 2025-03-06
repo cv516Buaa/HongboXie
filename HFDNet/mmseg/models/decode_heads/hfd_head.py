@@ -146,11 +146,11 @@ class HFDHead(BaseDecodeHead):
         HF_map = torch.sum(output_ - Low_output,dim=1) # b h w
         one = torch.ones_like(HF_map) # b h w
 
-        S = one + self.alpha * HF_map
-        S[:,1:,:] -= 0.25 * self.alpha * HF_map[:,:-1,:]
-        S[:,:-1,:] -= 0.25 * self.alpha * HF_map[:,1:,:]
-        S[:,:,1:] -= 0.25 * self.alpha * HF_map[:,:,:-1]
-        S[:,:,:-1] -= 0.25 * self.alpha * HF_map[:,:,1:]
+        S = one - self.alpha * HF_map
+        S[:,1:,:] += 0.25 * self.alpha * HF_map[:,:-1,:]
+        S[:,:-1,:] += 0.25 * self.alpha * HF_map[:,1:,:]
+        S[:,:,1:] += 0.25 * self.alpha * HF_map[:,:,:-1]
+        S[:,:,:-1] += 0.25 * self.alpha * HF_map[:,:,1:]
 
         # F3 = output.view(b,c,H*W)
         F3 = self.Linear(output_)
